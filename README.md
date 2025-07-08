@@ -58,6 +58,11 @@ A modern starter template for building performant web and mobile apps using:
    ```bash
   pnpm build # to create dist folder
   npx cap sync ios
+  brew install cocoapods
+  cd ios/App
+  pod install
+  cd ..
+  cd ..
   npx cap open ios
    ```
 

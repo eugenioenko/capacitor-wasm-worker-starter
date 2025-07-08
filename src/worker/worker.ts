@@ -7,7 +7,7 @@ interface Wasm {
   syncFunc: () => boolean;
 }
 
-declare let wasmLib: Wasm;
+declare let wasm: Wasm | undefined;
 
 // Helper to load WASM and bind functions
 async function initWasmLib() {
@@ -19,24 +19,23 @@ async function initWasmLib() {
     go.importObject
   );
   go.run(instance);
-  wasmLib = (self as any).wasm as Wasm;
 }
 
 // Message handler
 self.onmessage = async (event: MessageEvent) => {
   const { type, payload, id } = event.data;
   console.log(payload);
-  if (typeof wasmLib === "undefined") {
+  if (typeof wasm === "undefined") {
     await initWasmLib();
   }
   let result: any = undefined;
   try {
     switch (type) {
       case "syncFunc":
-        result = wasmLib.syncFunc!();
+        result = wasm?.syncFunc!();
         break;
       case "asyncFunc":
-        result = await wasmLib.asyncFunc!();
+        result = await wasm?.asyncFunc!();
         break;
       default:
         throw new Error("Unknown message type: " + type);

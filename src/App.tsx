@@ -6,6 +6,7 @@ function App() {
 
 
   async function handleSyncFunc() {
+    console.log("handleSyncFunc called");
     const result = await wasmWorkerClient.syncFunc();
     console.log(result);
   }
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex gap-4 items-center justify-center pt-6">
+      <div className="flex flex gap-4 items-center justify-center pt-20">
         <button type="button" onClick={handleSyncFunc}>
           Call Sync Function
         </button>
