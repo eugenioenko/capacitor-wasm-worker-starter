@@ -25,6 +25,7 @@ async function initWasmLib() {
 // Message handler
 self.onmessage = async (event: MessageEvent) => {
   const { type, payload, id } = event.data;
+  console.log(payload);
   if (typeof wasmLib === "undefined") {
     await initWasmLib();
   }

@@ -51,9 +51,14 @@ A modern starter template for building performant web and mobile apps using:
    ```
 
 4. **Run on device (optional):**
+- Install XCode
+- Install XCode cli tools
+- Accept XCode License
+
    ```bash
-   npx cap open android
-   npx cap open ios
+  pnpm build # to create dist folder
+  npx cap sync ios
+  npx cap open ios
    ```
 
 ## How it works

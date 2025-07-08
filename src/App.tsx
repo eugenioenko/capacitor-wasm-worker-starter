@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { wasmWorkerClient } from './worker/client'
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex gap-4 items-center justify-center">
+      <div className="flex flex gap-4 items-center justify-center pt-6">
         <button type="button" onClick={handleSyncFunc}>
           Call Sync Function
         </button>
