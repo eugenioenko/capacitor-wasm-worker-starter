@@ -1,5 +1,3 @@
-// libraWorkerClient.ts - Main thread wrapper for Libra WASM service worker
-
 export type WasmWorkerRequest = { type: "syncFunc" } | { type: "asyncFunc" };
 
 export type WasmWorkerResponse = {
